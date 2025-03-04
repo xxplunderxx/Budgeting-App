@@ -8,6 +8,9 @@ import {
 	TextInput,
 	TouchableOpacity,
 } from "react-native";
+import Line from "../Line";
+import CheckBox from "@react-native-community/checkbox";
+
 
 export function GetStarted() {
 	return (
@@ -27,13 +30,31 @@ export function GetStarted() {
 
 				<View style={view.inputSection}>
 					<Text style={text.inputTitle}>Password</Text>
-					<Input placeholder="Secret" />
+					<Input placeholder="Secret" security={true} />
 				</View>
-			</View>
 
-			<TouchableOpacity style={button.styles}>
-				<Text style={button.text}>Signup</Text>
-			</TouchableOpacity>
+				<View
+					style={[
+						view.inputSection,
+						{ flexDirection: "row", alignItems: "center" },
+					]}
+				>
+					<Text style={text.checkBox}>I agree to the Terms of Service</Text>
+				</View>
+
+				<View style={[view.inputSection, { marginTop: height * 0.0125 }]}>
+					<TouchableOpacity style={button.styles}>
+						<Text style={button.text}>Signup</Text>
+					</TouchableOpacity>
+				</View>
+
+				<View style={view.breakupSection}>
+					<Text style={text.pageBreakup}>Or</Text>
+					<Line />
+				</View>
+
+				
+			</View>
 		</View>
 	);
 }
@@ -51,17 +72,33 @@ const getPlatformStyles = () => {
 };
 
 // ✅ Create a reusable Input component
-const Input = ({ placeholder }: { placeholder: string }) => {
+const Input = ({
+	placeholder,
+	security = false,
+}: {
+	placeholder: string;
+	security?: boolean;
+}) => {
 	return (
 		<TextInput
 			style={text.input}
 			placeholder={placeholder}
 			placeholderTextColor="#D9D9D9"
+			secureTextEntry={security}
 		/>
 	);
 };
 
 // DEFINE STYLES
+const styles = StyleSheet.create({
+	checkBox: {
+		height: 10,
+		width: 9,
+		borderRadius: 2,
+		color: "#000000",
+		marginRight: 5,
+	}
+});
 
 // Define platform-specific styles in an object
 const PLATFORM_STYLES = {
@@ -102,11 +139,15 @@ const view = StyleSheet.create({
 	inputSection: {
 		marginBottom: height * 0.02,
 	},
+	breakupSection: {
+		marginTop: height * 0.04,
+	},
 });
 
 const text = StyleSheet.create({
 	title: {
 		fontSize: 32,
+		overflow: "hidden",
 	},
 	inputTitle: {
 		fontSize: 14,
@@ -120,6 +161,15 @@ const text = StyleSheet.create({
 		width: 404,
 		paddingLeft: 10,
 		paddingVertical: 10,
+	},
+	checkBox: {
+		fontSize: 9,
+		color: "#000000",
+	},
+	pageBreakup: {
+		fontSize: 9,
+		color: "#000000",
+		textAlign: "center",
 	},
 });
 
