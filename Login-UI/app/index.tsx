@@ -1,19 +1,22 @@
 import { View, StyleSheet, Text } from 'react-native';
 
 import { GetStarted } from '@/components/Login/GetStarted';
+import { NavigationContainer } from '@react-navigation/native';
+import * as React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import GoogleOAuthButton from '@/components/Login/Oauth/GoogleButton';
+
+const Stack = createNativeStackNavigator();
 
 export default function HomeScreen() {
   return (
-		<View style={styles.View}>
-			<GetStarted />
-		</View>
+		<Stack.Navigator>
+			<Stack.Screen
+				name="Home"
+				component={GetStarted}
+				options={{ headerShown: false }}
+			/>
+			<Stack.Screen name="Profile" component={GoogleOAuthButton} />
+		</Stack.Navigator>
 	);
 }
-
-const styles = StyleSheet.create({
-  View: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-});
