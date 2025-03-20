@@ -35,6 +35,10 @@ const styles = StyleSheet.create({
 	container: {
 		justifyContent: "center",
 		alignItems: "center",
+		paddingLeft: 10,
+		paddingRight: 10,
+		paddingTop: 4,
+		paddingBottom: 4,
 	},
 	googleButton: {
 		width: 190,
@@ -47,8 +51,6 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 		borderWidth: 1,
 		borderColor: "#D9D9D9",
-		paddingRight: 10,
-		paddingLeft: 10,
 	},
 	googleImage: {
 		width: 24,
