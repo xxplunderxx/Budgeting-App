@@ -8,10 +8,10 @@ import {
 	TextInput,
 	TouchableOpacity,
 } from "react-native";
-import Line from "../Line";
 import CheckBox from "@react-native-community/checkbox";
 import GoogleOAuthButton from "./Oauth/GoogleButton";
 import AppleOAuthButton from "./Oauth/AppleButton";
+import { NavigationScreenProp } from 'react-navigation';
 
 const { width, height } = Dimensions.get("window");
 
@@ -71,6 +71,11 @@ const styles = StyleSheet.create({
 		fontSize: 14, // Adjust font size as needed
 		color: "#000000", // Text color
 	},
+	link: {
+		color: "#3A5B22",
+		fontWeight: "bold",
+		fontSize: 14,
+	},
 });
 
 // Define platform-specific styles in an object
@@ -124,11 +129,16 @@ const view = StyleSheet.create({
 		marginBottom: height * 0.02,
 	},
 	breakupSection: {
-		marginTop: height * 0.04,
+		marginTop: height * 0.06,
 		alignItems: "center", // Center the breakup section
 	},
 	oathContainer: {
 		flexDirection: "row", // Center OAuth buttons
+		marginTop: height * 0.06,
+	},
+	SignInPage: {
+		flexDirection: "row",
+		marginTop: height * 0.04,
 	},
 });
 
@@ -160,7 +170,11 @@ const text = StyleSheet.create({
 	},
 });
 
-export function GetStarted() {
+const GetStarted = ({
+	navigation,
+}: {
+	navigation: NavigationScreenProp<any, any>;
+}) => {
 	return (
 		<View style={view.center}>
 			<View style={view.container}>
@@ -203,10 +217,20 @@ export function GetStarted() {
 							<AppleOAuthButton />
 						</View>
 					</View>
+
+					<View style={view.SignInPage}>
+						<Text>Have An Account? </Text>
+						<Text
+							style={styles.link}
+							onPress={() => navigation.navigate("Profile")}
+						>
+							Sign In
+						</Text>
+					</View>
 				</View>
 			</View>
 		</View>
 	);
-}
+};
 
 export default GetStarted;

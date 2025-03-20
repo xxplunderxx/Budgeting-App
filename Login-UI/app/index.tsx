@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text } from 'react-native';
 
-import { GetStarted } from '@/components/Login/GetStarted';
+import GetStarted from '@/components/Login/GetStarted';
 import { NavigationContainer } from '@react-navigation/native';
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
