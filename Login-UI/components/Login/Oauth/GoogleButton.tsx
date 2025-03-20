@@ -5,6 +5,7 @@ import {
 	Image,
 	StyleSheet,
 	Linking,
+	Text,
 } from "react-native";
 
 const GoogleOAuthButton = () => {
@@ -17,11 +18,14 @@ const GoogleOAuthButton = () => {
 	return (
 		<View style={styles.container}>
 			<TouchableOpacity onPress={handleGoogleLogin}>
-				<Image
-					style={styles.googleButton}
-					source={require("../../../assets/images/google.png")}
-                    accessibilityLabel="Google Login"
-				/>
+				<View style={styles.googleButton}>
+					<Image
+						style={styles.googleImage}
+						source={require("../../../assets/images/google.png")}
+						accessibilityLabel="Google Login"
+					/>
+					<Text> Sign in with Google</Text>
+				</View>
 			</TouchableOpacity>
 		</View>
 	);
@@ -33,9 +37,22 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	googleButton: {
-		width: 200,
-		height: 50,
+		width: 190,
+		height: 32,
 		resizeMode: "contain",
+		alignItems: "center",
+		justifyContent: "center",
+		flexDirection: "row",
+		backgroundColor: "white",
+		borderRadius: 10,
+		borderWidth: 1,
+		borderColor: "#D9D9D9",
+		paddingRight: 10,
+		paddingLeft: 10,
+	},
+	googleImage: {
+		width: 24,
+		height: 24,
 	},
 });
 

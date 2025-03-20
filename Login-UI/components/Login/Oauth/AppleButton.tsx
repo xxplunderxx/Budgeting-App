@@ -5,6 +5,7 @@ import {
     Image,
     StyleSheet,
     Linking,
+    Text,
 } from "react-native";
 
 const AppleOAuthButton = () => {
@@ -15,28 +16,44 @@ const AppleOAuthButton = () => {
     };
 
     return (
-        <View style={styles.container}>
-            <TouchableOpacity onPress={handleAppleLogin}>
-                <Image
-                    style={styles.googleButton}
-                    source={require("../../../assets/images/apple.png")}
-                    accessibilityLabel="Google Login"
-                />
-            </TouchableOpacity>
-        </View>
-    );
+			<View style={styles.container}>
+				<TouchableOpacity onPress={handleAppleLogin}>
+					<View style={styles.appleButton}>
+						<Image
+							style={styles.appleImage}
+							source={require("../../../assets/images/apple.png")}
+							accessibilityLabel="Apple Login"
+						/>
+						<Text> Sign in with Apple</Text>
+					</View>
+				</TouchableOpacity>
+			</View>
+		);
 };
 
 const styles = StyleSheet.create({
-    container: {
-        justifyContent: "center",
+	container: {
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	appleButton: {
+		width: 190,
+		height: 32,
+		resizeMode: "contain",
         alignItems: "center",
-    },
-    googleButton: {
-        width: 200,
-        height: 50,
-        resizeMode: "contain",
-    },
+        justifyContent: "center",
+        flexDirection: "row",
+		backgroundColor: "white",
+		borderRadius: 10,
+		borderWidth: 1,
+		borderColor: "#D9D9D9",
+        paddingRight: 10,
+        paddingLeft: 10,
+	},
+	appleImage: {
+        width: 24,
+        height: 24,
+    }
 });
 
 export default AppleOAuthButton;

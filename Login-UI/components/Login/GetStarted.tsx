@@ -11,7 +11,7 @@ import {
 import CheckBox from "@react-native-community/checkbox";
 import GoogleOAuthButton from "./Oauth/GoogleButton";
 import AppleOAuthButton from "./Oauth/AppleButton";
-import { NavigationScreenProp } from 'react-navigation';
+import { NavigationProp } from "@react-navigation/native";
 
 const { width, height } = Dimensions.get("window");
 
@@ -103,7 +103,7 @@ const button = StyleSheet.create({
 		height: 35,
 		justifyContent: "center",
 		alignItems: "center",
-	}
+	},
 });
 
 const view = StyleSheet.create({
@@ -173,7 +173,7 @@ const text = StyleSheet.create({
 const GetStarted = ({
 	navigation,
 }: {
-	navigation: NavigationScreenProp<any, any>;
+	navigation: NavigationProp<any, any>;
 }) => {
 	return (
 		<View style={view.center}>
