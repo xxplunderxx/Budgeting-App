@@ -24,7 +24,7 @@ const GoogleOAuthButton = () => {
 						source={require("../../../assets/images/google.png")}
 						accessibilityLabel="Google Login"
 					/>
-					<Text> Sign in with Google</Text>
+					<Text> Sign up with Google</Text>
 				</View>
 			</TouchableOpacity>
 		</View>

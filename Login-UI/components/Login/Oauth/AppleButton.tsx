@@ -24,7 +24,7 @@ const AppleOAuthButton = () => {
 							source={require("../../../assets/images/apple.png")}
 							accessibilityLabel="Apple Login"
 						/>
-						<Text> Sign in with Apple</Text>
+						<Text> Sign up with Apple</Text>
 					</View>
 				</TouchableOpacity>
 			</View>
