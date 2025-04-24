@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Login-UI",
+    "slug": "Login-UI",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.mybudget.login",
+			"googleServicesFile": "../GoogleService-Info.plist"
+		},
+    "android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/images/adaptive-icon.png",
+				"backgroundColor": "#ffffff"
+			},
+			"bundleIdentifier": "com.mybudget.login"
+		},
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "@react-native-google-signin/google-signin"
+    ],
+
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
