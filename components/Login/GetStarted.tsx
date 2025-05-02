@@ -8,7 +8,6 @@ import {
 	TextInput,
 	TouchableOpacity,
 } from "react-native";
-import CheckBox from "@react-native-community/checkbox";
 import GoogleOAuthButton from "./Oauth/GoogleButton";
 import AppleOAuthButton from "./Oauth/AppleButton";
 import { NavigationProp } from "@react-navigation/native";
