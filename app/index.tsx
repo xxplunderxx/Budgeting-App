@@ -5,12 +5,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import GoogleOAuthButton from '@/components/Login/Oauth/GoogleButton';
+import StudentLoan from '@/components/BudgetApp/StudentLoan';
 
 const Stack = createNativeStackNavigator();
 
 export default function HomeScreen() {
   return (
 		<Stack.Navigator>
+			<Stack.Screen
+				name="StudentLoan"
+				component={StudentLoan}
+				options={{ headerShown: false }}
+			/>
 			<Stack.Screen
 				name="Home"
 				component={GetStarted}

@@ -7,8 +7,16 @@ import {
 	Platform,
 	Text,
 	TextInput,
-	TouchableOpacity,
+	TouchableOpacity
 } from "react-native";
+
+const styles = StyleSheet.create({
+	HeaderSection: {
+		alignItems: "center",
+		justifyContent: "center",
+	},
+});
+
 
 const StudentLoan = ({
 	navigation,
@@ -17,8 +25,20 @@ const StudentLoan = ({
 }) => {
 	return (
 		<View>
-            <Text>Student Loans</Text>
-        </View>
+			<View>
+				<Text>Student Loans</Text>
+                <View>
+                    <Text>0 /</Text>
+                    <Text>10,000</Text>
+                    <TouchableOpacity>
+                        <Text>Edit</Text>
+                    </TouchableOpacity>
+                </View>
+			</View>
+            <View>
+                <Text>Student Loan Graph</Text>
+            </View>
+		</View>
 	);
 };
 
