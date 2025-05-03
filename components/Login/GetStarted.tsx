@@ -221,7 +221,7 @@ const GetStarted = ({
 						<Text>Have An Account? </Text>
 						<Text
 							style={styles.link}
-							onPress={() => navigation.navigate("Profile")}
+							onPress={() => navigation.navigate("StudentLoan")}
 						>
 							Sign In
 						</Text>
